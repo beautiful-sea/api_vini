@@ -21,7 +21,10 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
+        'matricula',
+        'curso_id'
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,6 +43,10 @@ class User extends Authenticatable implements JWTSubject
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    protected $with = [
+        'curso','atividades'
     ];
 
     // Rest omitted for brevity
@@ -62,5 +69,13 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function atividades(){
+        return $this->hasMany(AtividadesComplementar::class);
+    }
+
+    public function curso(){
+        return $this->belongsTo(Curso::class);
     }
 }

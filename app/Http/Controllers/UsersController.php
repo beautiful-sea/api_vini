@@ -116,4 +116,11 @@ class UsersController extends Controller
         $user->delete();
         return response()->json($user);
     }
+
+    public function curso(Request $request){
+        auth()->user()->update([
+            'curso_id'  =>  $request->curso_id
+        ]);
+        return response()->json(auth()->user());
+    }
 }

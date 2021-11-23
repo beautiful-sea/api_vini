@@ -28,5 +28,9 @@ Route::middleware('jwt.verify')->group(function () {
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+    Route::post('/users/curso', 'UsersController@curso');
     Route::resource('users', 'UsersController')->except(['store']);
+    Route::resource('atividades', 'AtividadesController');
+    Route::resource('categorias', 'CategoriasController');
+    Route::resource('cursos', 'CursosController');
 });
