@@ -9,7 +9,7 @@ class AtividadesComplementar extends Model
 {
     use HasFactory;
 
-    protected $table = 'atividades_complementares';
+    protected $table = 'summa_atividadecomplementar';
 
     protected $guarded = ['id'];
 }

@@ -33,4 +33,5 @@ Route::middleware('jwt.verify')->group(function () {
     Route::resource('atividades', 'AtividadesController');
     Route::resource('categorias', 'CategoriasController');
     Route::resource('cursos', 'CursosController');
+    Route::get('/dashboard', 'DashboardController@index');
 });

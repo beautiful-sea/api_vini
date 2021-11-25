@@ -9,5 +9,6 @@ class Categoria extends Model
 {
     use HasFactory;
 
+    protected $table = 'summa_categorias';
     protected $guarded = ['id'];
 }

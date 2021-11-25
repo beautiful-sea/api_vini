@@ -9,5 +9,6 @@ class Curso extends Model
 {
     use HasFactory;
 
+    protected $table = 'summa_curso';
     protected $guarded = ['id'];
 }

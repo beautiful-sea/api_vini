@@ -35,7 +35,12 @@ class AtividadesController extends Controller
      */
     public function store(Request $request)
     {
-        $atividade = auth()->user()->atividades()->create($request->all());
+        $data= $request->all();
+
+        if($request->has('certificado')){
+            $data['certificado'] = $request->certificado->store('/certificados','public');
+        }
+        $atividade = auth()->user()->atividades()->create($data);
         return response()->json($atividade);
     }
 
