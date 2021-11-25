@@ -13,13 +13,13 @@ class CreateAtividadesComplentaresTable extends Migration
      */
     public function up()
     {
-        Schema::create('atividades_complementares', function (Blueprint $table) {
+        Schema::create('summa_atividadecomplementar', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
             $table->string('empresa');
             $table->string('cnpj');
-            $table->integer('carga_horaria_informacao');
-            $table->integer('carga_horaria_integraliza');
+            $table->integer('carga_horaria_informada');
+            $table->integer('carga_horaria_integralizada');
             $table->string('justificativa');
             $table->string('certificado');
             $table->string('status');
@@ -38,6 +38,6 @@ class CreateAtividadesComplentaresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atividades_complementares');
+        Schema::dropIfExists('summa_atividades_complementares');
     }
 }

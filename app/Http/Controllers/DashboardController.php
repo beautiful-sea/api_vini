@@ -9,7 +9,7 @@ class DashboardController extends Controller
     public function index(){
         $atividades = auth()->user()->atividades();
 
-        $integralizadas = $atividades->sum('carga_horaria_integraliza');
+        $integralizadas = $atividades->where('status','aprovado')->sum('carga_horaria_integralizada');
         $submetidas = $atividades->get();
         $aguardando_validacao = $atividades->where('status','em_validacao')->get();
         $recusadas = $atividades->where('status','recusado')->get();

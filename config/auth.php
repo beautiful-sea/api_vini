@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'api',
-        'passwords' => 'users',
+        'passwords' => 'summa_usuario',
     ],
 
     /*
@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'summa_usuario',
         ],
 
         'api' => [
             'driver' => 'jwt',
-            'provider' => 'users',
+            'provider' => 'summa_usuario',
             'hash' => false,
         ],
     ],
@@ -66,7 +66,7 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'summa_usuario' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
@@ -93,8 +93,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'summa_usuario' => [
+            'provider' => 'summa_usuario',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
