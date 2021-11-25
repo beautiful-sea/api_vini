@@ -73,7 +73,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
     public function atividades(){
-        return $this->hasMany(AtividadesComplementar::class);
+        return $this->hasMany(AtividadesComplementar::class,'usuario_id');
     }
 
     public function curso(){
